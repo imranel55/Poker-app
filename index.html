@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Poker</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Poker Mini App</title>
+  <style>
+    body { background: darkgreen; color: white; text-align: center; }
+    .card { 
+      width: 60px; height: 90px; 
+      background: white; border-radius: 5px; 
+      display: inline-block; margin: 5px;
+      color: black; font-size: 20px; padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Poker Game</h1>
+  <div id="cards">
+    <div class="card">A♠</div>
+    <div class="card">K♦</div>
+  </div>
+  <button onclick="dealCards()">Deal Cards</button>
+
+  <script>
+    function dealCards() {
+      const suits = ['♠', '♥', '♦', '♣'];
+      const ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
+      const cards = [];
+      for (let i = 0; i < 5; i++) {
+        const suit = suits[Math.floor(Math.random() * suits.length)];
+        const rank = ranks[Math.floor(Math.random() * ranks.length)];
+        cards.push(`<div class="card">${rank}${suit}</div>`);
+      }
+      document.getElementById('cards').innerHTML = cards.join('');
+    }
+  </script>
+</body>
+</html>
+<!-- partial -->
+  
+</body>
+</html>
